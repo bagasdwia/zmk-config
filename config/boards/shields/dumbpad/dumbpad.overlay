@@ -1,4 +1,10 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <layouts/gtips/dumbpad.dtsi>
+
+
+&gtips_dumbpad_layout {
+    transform = <&default_transform>;
+};
 
 / {
     chosen {
@@ -46,7 +52,5 @@
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder>;
         triggers-per-rotation = <20>;
-    };
-
-    
+    };   
 };
