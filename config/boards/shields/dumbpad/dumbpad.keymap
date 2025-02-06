@@ -14,52 +14,37 @@
         compatible = "zmk,keymap";
 
         default_layer {
-// ------------------------------------
+// ---------------------------------------
 //           | 7      |  8  |  9  | bscp |
 //           | 4      |  5  |  6  | EQUAL|
 //           | 1      |  2  |  3  | MINUs|       
 // | TO(1)   | TO(2)  |  0  |  .  | ENT  |
-// ------------------------------------
-
+// ---------------------------------------
             bindings = <
            &kp N7 &kp N8 &kp N9  &kp BSPC
            &kp N4 &kp N5 &kp N6  &kp EQUAL
            &kp N1 &kp N2 &kp N3  &kp MINUS
     &to 1  &to 2  &kp N0 &kp DOT &mt RSHFT RET
             >;
+           
+            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV>;
         };
 
-        lower_layer {
-// ------------------------------------
-//           | bscp  | f1  |  f2  | f3  |
-//           | ENT   | f4  |  f5  | f6  |
-//           | TAB   | f7  |  f8  | f9  |       
-// | TO(0)   | TO(1) | f10 |  f11 | f12 |
-// ------------------------------------
-
-            bindings = <
-           &kp BSPC &kp F1  &kp F2  &kp F3
-           &kp RET  &kp F4  &kp F5  &kp F6
-           &kp TAB  &kp F7  &kp F8  &kp F9
-    &to    &to 2    &kp F10 &kp F11 &kp F12
-            >;
-        };
-
-        raise_layer {
-// ------------------------------------
+        nav_layer {
+// --------------------------------------
 //           | 1     | 2   |  3   | 4   |
 //           | Q     | W   |  E   | R   |
 //           | A     | S   |  D   | F   |       
 // | TO(0)   | ESC   | C   |  B   | T   |
-// ------------------------------------
-
+// --------------------------------------
             bindings = <
            &kp 1    &kp 2   &kp 3   &kp 4
            &kp Q    &kp W   &kp E   &kp R
            &kp A    &kp S   &kp D   &kp F
     &to    &to ESC  &kp C   &kp B   &kp T
             >;
+            
+            sensor-bindings = <&inc_dec_kp A B>;
+        };
     };
-  };
 };
-
